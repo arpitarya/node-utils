@@ -1,0 +1,55 @@
+{
+  "name": "@sentenel/node-utils",
+  "version": "0.1.2",
+  "description": "Reusable Node utilities for Sentenel (paths, dotenv helpers)",
+  "license": "MIT",
+  "author": "aarya11 <arpitarya@users.noreply.github.com>",
+  "private": false,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib dev",
+    "test": "rstest",
+    "prepare": "pnpm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "sentenel",
+    "node",
+    "utils",
+    "paths",
+    "dotenv"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "2.3.14",
+    "@rslib/core": "0.19.5",
+    "@rstest/core": "0.8.3",
+    "@types/node": "25.2.1",
+    "chalk": "5.6.2",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "17.2.4",
+    "dotenv-expand": "12.0.3"
+  }
+}
