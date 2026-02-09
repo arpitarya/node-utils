@@ -13,8 +13,7 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib dev",
-    "test": "rstest",
-    "prepare": "pnpm run build"
+    "test": "rstest"
   },
   "files": [
     "dist",
