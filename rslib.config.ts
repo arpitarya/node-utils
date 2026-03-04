@@ -3,34 +3,50 @@ import { defineConfig } from "@rslib/core";
 export default defineConfig({
   source: {
     entry: {
-      index: "./src/index.ts",
+      index: "./src/**",
     },
     tsconfigPath: "./tsconfig.json",
   },
+  tools: {
+    rspack: {
+      cache: false,
+    },
+  },
   lib: [
     {
-      format: "esm",
-      syntax: "esnext",
-      dts: {
-        distPath: "./dist/esm",
-      },
+      format: "cjs",
       bundle: false,
       output: {
-        distPath: "./dist/esm",
-        manifest: "asset-manifest-mjs.json",
+        minify: false,
+        manifest: {
+          filename: "manifest.cjs.json",
+        },
+        filename: {
+          js: "[name].cjs",
+        },
       },
+      dts: true,
     },
     {
-      format: "cjs",
-      syntax: "esnext",
-      dts: {
-        distPath: "./dist/cjs",
-      },
+      format: "esm",
       bundle: false,
       output: {
-        distPath: "./dist/cjs",
-        manifest: "asset-manifest-cjs.json",
+        minify: false,
+        manifest: {
+          filename: "manifest.esm.json",
+        },
+        filename: {
+          js: "[name].mjs",
+        },
       },
+      dts: true,
     },
   ],
+  output: {
+    target: "node",
+    distPath: {
+      root: "./dist",
+    },
+    sourceMap: true,
+  },
 });
