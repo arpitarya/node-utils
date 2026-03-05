@@ -1,7 +1,7 @@
 {
-  "name": "@sentenel/node-utils",
-  "version": "0.1.4",
-  "description": "Reusable Node utilities for Sentenel (paths, dotenv helpers)",
+  "name": "@apec-one/node-utils",
+  "version": "1.0.0",
+  "description": "Reusable Node utilities for APECOne (paths, dotenv helpers)",
   "license": "MIT",
   "author": "aarya11 <arpitarya@users.noreply.github.com>",
   "private": false,
@@ -37,7 +37,7 @@
     "access": "public"
   },
   "keywords": [
-    "sentenel",
+    "APECOne",
     "node",
     "utils",
     "paths",

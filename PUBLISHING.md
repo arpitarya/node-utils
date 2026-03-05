@@ -1,6 +1,6 @@
 # Publishing Guide
 
-This document explains how to publish packages from the Sentenel monorepo.
+This document explains how to publish packages from the APECOne monorepo.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ The recommended way to publish is through GitHub Releases:
 3. Create a GitHub release with tag `v0.1.0` (matching package version)
 4. The [publish workflow](.github/workflows/publish.yml) will automatically:
    - Build all packages
-   - Publish to npm with the `@sentenel` scope
+  - Publish to npm with the `@apec-one` scope
    - Publish to GitHub Packages
 
 ### Manual Publishing
@@ -59,7 +59,7 @@ GitHub Packages allows publishing private or scoped packages.
 1. Create a GitHub Personal Access Token (PAT) with `write:packages` scope
 2. Add to `~/.npmrc`:
    ```
-   @sentenel:registry=https://npm.pkg.github.com
+  @apec-one:registry=https://npm.pkg.github.com
    //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
    ```
 
@@ -74,12 +74,12 @@ Trigger manually:
 
 ## Package Configuration
 
-### Current Package: @sentenel/node-utils
+### Current Package: @apec-one/node-utils
 
 **Location**: `packages/node-utils/`
 
 **Package Fields** (in `package.json`):
-- `name`: `@sentenel/node-utils`
+- `name`: `@apec-one/node-utils`
 - `version`: Should match release tag
 - `private`: Set to `false` for publishing
 - `main`: Points to CJS output from Rslib
@@ -91,7 +91,7 @@ Ensure the package is NOT private:
 
 ```json
 {
-  "name": "@sentenel/node-utils",
+  "name": "@apec-one/node-utils",
   "private": false,
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -138,8 +138,8 @@ After publishing, verify the package:
 
 ```bash
 # For npm
-npm view @sentenel/node-utils
+npm view @apec-one/node-utils
 
 # For GitHub Packages
-npm view @sentenel/node-utils --registry https://npm.pkg.github.com
+npm view @apec-one/node-utils --registry https://npm.pkg.github.com
 ```

@@ -14,7 +14,7 @@ enum WorkingDirLogsLevel {
 }
 
 function logInfo(...args: unknown[]): void {
-  console.info("SENTENEL PATH::", chalk.blueBright(...args.map((arg) => String(arg))));
+  console.info("@apec-one PATH::", chalk.blueBright(...args.map((arg) => String(arg))));
 }
 
 function getRootWorkingDirectory(): string | undefined {

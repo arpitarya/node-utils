@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project Overview
 
-Sentenel is a polyglot project using Python 3.14 and Node.js 24.
+APECOne is a polyglot project using Python 3.14 and Node.js 24.
 
 ## Development Setup
 
