@@ -1,7 +1,7 @@
 {
-  "name": "@apec-one/node-utils",
+  "name": "@apec1/node-utils",
   "version": "1.0.0",
-  "description": "Reusable Node utilities for APECOne (paths, dotenv helpers)",
+  "description": "Reusable Node utilities for APEC1 (paths, dotenv helpers)",
   "license": "MIT",
   "author": "aarya11 <arpitarya@users.noreply.github.com>",
   "private": false,
@@ -37,7 +37,7 @@
     "access": "public"
   },
   "keywords": [
-    "APECOne",
+    "APEC1",
     "node",
     "utils",
     "paths",

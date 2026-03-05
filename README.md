@@ -1,4 +1,4 @@
-# @apec-one/node-utils
+# @apec1/node-utils
 
 Utilities for Node.js apps that need reliable path resolution and predictable `.env` loading in workspace/monorepo setups.
 
@@ -16,9 +16,9 @@ Utilities for Node.js apps that need reliable path resolution and predictable `.
 ## Installation
 
 ```bash
-pnpm add @apec-one/node-utils
-# npm install @apec-one/node-utils
-# yarn add @apec-one/node-utils
+pnpm add @apec1/node-utils
+# npm install @apec1/node-utils
+# yarn add @apec1/node-utils
 ```
 
 ## Quick Start
@@ -28,7 +28,7 @@ import {
   syncExpandDotEnv,
   resolveRootPath,
   resolveWorkspaceDirectory,
-} from "@apec-one/node-utils";
+} from "@apec1/node-utils";
 
 process.env.NODE_ENV = process.env.NODE_ENV ?? "development";
 await syncExpandDotEnv(".env");
@@ -53,7 +53,7 @@ Loads environment files in this order (if they exist):
 Example:
 
 ```ts
-import { syncExpandDotEnv } from "@apec-one/node-utils";
+import { syncExpandDotEnv } from "@apec1/node-utils";
 
 process.env.NODE_ENV = "production";
 await syncExpandDotEnv(".env");
@@ -64,7 +64,7 @@ await syncExpandDotEnv(".env");
 Asynchronous `.env` loader with the same file precedence as `syncExpandDotEnv`.
 
 ```ts
-import { asyncExpandDotEnv } from "@apec-one/node-utils";
+import { asyncExpandDotEnv } from "@apec1/node-utils";
 
 await asyncExpandDotEnv(".env");
 ```
@@ -74,7 +74,7 @@ await asyncExpandDotEnv(".env");
 Resolves a path relative to detected root working directory (`ROOT_WORKING_DIRECTORY`) and falls back to `process.cwd()`.
 
 ```ts
-import { resolveRootPath } from "@apec-one/node-utils";
+import { resolveRootPath } from "@apec1/node-utils";
 
 const absolutePath = resolveRootPath("packages/api/src/index.ts");
 ```
@@ -84,7 +84,7 @@ const absolutePath = resolveRootPath("packages/api/src/index.ts");
 Resolves a path relative to the current process working directory.
 
 ```ts
-import { resolveWorkspaceDirectory } from "@apec-one/node-utils";
+import { resolveWorkspaceDirectory } from "@apec1/node-utils";
 
 const absolutePath = resolveWorkspaceDirectory("src/index.ts");
 ```
@@ -104,7 +104,7 @@ const absolutePath = resolveWorkspaceDirectory("src/index.ts");
 ### Monorepo bootstrap
 
 ```ts
-import { syncExpandDotEnv, resolveRootPath } from "@apec-one/node-utils";
+import { syncExpandDotEnv, resolveRootPath } from "@apec1/node-utils";
 
 await syncExpandDotEnv(".env");
 const dbConfigPath = resolveRootPath("packages/api/config/database.json");
@@ -113,7 +113,7 @@ const dbConfigPath = resolveRootPath("packages/api/config/database.json");
 ### Package-local paths
 
 ```ts
-import { resolveWorkspaceDirectory } from "@apec-one/node-utils";
+import { resolveWorkspaceDirectory } from "@apec1/node-utils";
 
 const migrationDir = resolveWorkspaceDirectory("migrations");
 ```

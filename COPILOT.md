@@ -1,6 +1,6 @@
 # Copilot Instructions
 
-This file provides coding guidelines and instructions for GitHub Copilot when working on the APECOne project.
+This file provides coding guidelines and instructions for GitHub Copilot when working on the APEC1 project.
 
 ## Project Context
 
@@ -133,7 +133,7 @@ mod tests {
 ## Workspace Structure
 
 ```
-APECOne/
+APEC1/
 ├── packages/
 │   └── node-utils/          # TypeScript utilities package
 │       ├── dist/            # Build output (esm/cjs)
@@ -169,7 +169,7 @@ pdm run pytest               # Run tests
 pnpm install                 # Install dependencies
 pnpm test                    # Run tests with Rstest
 pnpm test:watch              # Run tests in watch mode
-pnpm -F @apec-one/node-utils build  # Build package with Rslib
+pnpm -F @apec1/node-utils build  # Build package with Rslib
 ```
 
 ### Rust
@@ -183,9 +183,9 @@ cargo build --release        # Build optimized binary
 ## Import Aliases
 
 ### TypeScript
-Use `@apec-one/*` for monorepo packages:
+Use `@apec1/*` for monorepo packages:
 ```typescript
-import { RootPath } from "@apec-one/node-utils/paths";
+import { RootPath } from "@apec1/node-utils/paths";
 ```
 
 ## Best Practices

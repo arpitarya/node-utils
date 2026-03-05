@@ -14,13 +14,13 @@ describe("Paths Utilities", () => {
 
   describe("resolveRootPath", () => {
     it("should resolve a relative path against the root working directory", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("src/index.ts");
       expect(result).toContain("src/index.ts");
     });
 
     it("should handle absolute paths correctly", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("packages/node-utils");
       expect(result).toContain("packages/node-utils");
     });
@@ -28,25 +28,25 @@ describe("Paths Utilities", () => {
     it("should throw error when root working directory is not defined", () => {
       // Note: rootWorkingDirectory falls back to currentWorkingDirectory,
       // so it will never be undefined. This test documents that behavior.
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("src/index.ts");
       expect(result).toContain("src/index.ts");
     });
 
     it("should handle empty relative path", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("");
-      expect(result).toContain("APECOne");
+      expect(result).toContain("APEC1");
     });
 
     it("should handle nested relative paths", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("packages/node-utils/src/index.ts");
       expect(result).toContain("packages/node-utils/src/index.ts");
     });
 
     it("should handle paths with .. navigation", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
       const result = resolveRootPath("packages/../src");
       expect(result).toContain("src");
     });
@@ -87,7 +87,7 @@ describe("Paths Utilities", () => {
 
   describe("Path resolution integration", () => {
     it("should resolve different paths consistently when environment is set", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
 
       const rootPath1 = resolveRootPath("src/utils");
       const rootPath2 = resolveRootPath("src/utils");
@@ -96,7 +96,7 @@ describe("Paths Utilities", () => {
     });
 
     it("should normalize paths correctly", () => {
-      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APECOne";
+      process.env.ROOT_WORKING_DIRECTORY = "/home/user/projects/APEC1";
 
       const result1 = resolveRootPath("./src/index.ts");
       const result2 = resolveRootPath("src/index.ts");
